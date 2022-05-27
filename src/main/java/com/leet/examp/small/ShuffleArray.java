@@ -1,5 +1,5 @@
 package com.leet.examp.small;
-
+//2,454,160
 public class ShuffleArray {
     public int[] shuffle(int[] nums, int n) {
         int[] result = new int[nums.length];

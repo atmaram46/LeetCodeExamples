@@ -1,11 +1,13 @@
 package com.leet.examp.medium;
 
+import java.math.BigInteger;
+
 public class LongMultiply {
 
     public static String multiply(String num1, String num2) {
-        long val1 = Long.parseLong(num1);
-        long val2 = Long.parseLong(num2);
-        long result = val1*val2;
+        BigInteger val1=new BigInteger(num1);
+        BigInteger val2 = new BigInteger(num2);
+        BigInteger result = val1.multiply(val2);
         return String.valueOf(result);
     }
 

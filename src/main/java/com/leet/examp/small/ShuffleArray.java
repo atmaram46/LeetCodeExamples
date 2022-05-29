@@ -11,6 +11,12 @@ public class ShuffleArray {
             result[i] = nums[n];
             n++;
         }
+
+        String data = "asdfsad";
+        int size = data.length();
+
         return result;
     }
+
+
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SummaryRanges {
 
-    static Set<Integer> inputData = new LinkedHashSet<>();
+    static Set<Integer> inputData = new TreeSet<>();
 
     public static void main(String[] args) {
         addNum(1);
@@ -25,6 +25,7 @@ public class SummaryRanges {
             System.out.print(values[i][0] + " " + values[i][1]);
             System.out.println();
         }
+        System.out.println("------------------------");
     }
 
     public SummaryRanges() {
@@ -40,8 +41,8 @@ public class SummaryRanges {
         if(size == 0) {
             return null;
         } else if(size == 1) {
-            int startVal = values.next();
-            data.add(new int[]{startVal, startVal});
+            Optional<Integer> startVal = inputData.stream().findFirst();
+            data.add(new int[]{startVal.get(), startVal.get()});
             return convertListToArray(data);
         }
         int i=-1;
@@ -52,10 +53,12 @@ public class SummaryRanges {
             } else {
                 int[] oldVal = data.get(i);
                 if(oldVal[1]+1 == values) {
+                    data.remove(i);
                     oldVal[1] = values;
                     data.add(i, oldVal);
                 } else {
-                    
+                    data.add(new int[] {values, values});
+                    i++;
                 }
             }
         }

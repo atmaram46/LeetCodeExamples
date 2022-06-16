@@ -3,7 +3,7 @@ package com.leet.examp.medium;
 public class LongestPalindrom {
 
     public static void main(String[] args) {
-        longestPalSubstr("babad");
+        longestPalSubstr("ramchahelilachaahcalilramchahe");
     }
 
     public static int longestPalSubstr(String str) {
